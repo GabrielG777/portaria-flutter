@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';
 import 'package:portaria_flutter/shared/auth/data/models/funcionario_model.dart';
-import 'auth_datasource.dart';
+import '../auth_datasource.dart';
 import 'dart:developer' as dev;
 
 class AuthDatasourceImpl implements AuthDatasource {

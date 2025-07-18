@@ -4,7 +4,6 @@ import '../controllers/login_controller.dart';
 import '../widgets/custom_button.dart';
 // import 'dart:developer' as dev;
 
-
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
   @override
@@ -46,10 +45,9 @@ class _LoginPageState extends State<LoginPage> {
                 TextFormField(
                   controller: _nomeController,
                   decoration: const InputDecoration(labelText: 'Nome'),
-                  validator: (value) =>
-                      value == null || value.trim().isEmpty
-                          ? 'Por favor, insira o nome'
-                          : null,
+                  validator: (value) => value == null || value.trim().isEmpty
+                      ? 'Por favor, insira o nome'
+                      : null,
                 ),
                 const SizedBox(height: 16),
                 TextFormField(
@@ -64,13 +62,11 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                   obscureText: _obscureCNH,
-                  validator: (value) =>
-                      value == null || value.trim().isEmpty
-                          ? 'Por favor, insira a CNH'
-                          : null,
+                  validator: (value) => value == null || value.trim().isEmpty
+                      ? 'Por favor, insira a CNH'
+                      : null,
                 ),
                 const SizedBox(height: 30),
-
                 controller.loading
                     ? const CircularProgressIndicator()
                     : CustomButton(
@@ -90,9 +86,14 @@ class _LoginPageState extends State<LoginPage> {
                               );
                             } else {
                               // ignore: use_build_context_synchronously
+                              Navigator.of(context)
+                                  .pushReplacementNamed('/home');
+
+                              // ignore: use_build_context_synchronously
                               ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(
                                   content: Text('Login efetuado com sucesso!'),
+                                  backgroundColor: Colors.green,
                                 ),
                               );
                             }

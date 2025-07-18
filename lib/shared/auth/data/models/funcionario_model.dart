@@ -24,4 +24,10 @@ class FuncionarioModel extends FuncionarioEntity {
     'nome': nome,
     'cnh': cnh,
   };
+  Map<String, dynamic> toJsonPost() => {
+    // 'id': id,
+    'nome': nome,
+    'cargo': cargo,
+    'cnh': cnh,
+  };
 }
