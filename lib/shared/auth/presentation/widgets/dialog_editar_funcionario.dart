@@ -7,13 +7,14 @@ class DialogEditarFuncionario extends StatefulWidget {
   final FuncionarioDatasource datasource;
   final FuncionarioModel funcionario;
 
-  DialogEditarFuncionario({
+  const DialogEditarFuncionario({
     required this.datasource,
     required this.funcionario,
     super.key,
   });
 
   @override
+  // ignore: library_private_types_in_public_api
   _DialogEditarFuncionarioState createState() =>
       _DialogEditarFuncionarioState();
 }

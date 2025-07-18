@@ -59,6 +59,7 @@ class FuncionarioDatasourceImpl implements FuncionarioDatasource {
     }
   }
 
+  @override
   Future<void> editarFuncionario(FuncionarioModel funcionario) async {
   final response = await dio.put(
     'http://192.168.5.16:8080/funcionarios/atualizar/${funcionario.id}',
