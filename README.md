@@ -36,6 +36,20 @@ Desculpa qualquer commit com erro, estou disposto a receber qualquer crítica!
 
 ---
 
+## Projeto
+
+Para o desenvolvimento, utilizei as seguintes dependências no `pubspec.yaml`:
+
+* `cupertino_icons: ^1.0.8`
+* `provider: ^6.1.3`
+* `dio: ^5.1.0`
+* `jwt_decoder: ^2.0.1`
+* `intl: ^0.18.1`
+
+Usei o **VSCode** como editor de código e o navegador **Chrome** para buildar e testar o projeto.
+
+---
+
 ## Telas do Projeto
 
 ### Tela Login
