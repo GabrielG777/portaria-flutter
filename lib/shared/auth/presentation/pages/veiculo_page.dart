@@ -4,8 +4,8 @@ import 'package:portaria_flutter/shared/auth/data/datasources/impl/veiculo_datas
 import 'package:portaria_flutter/shared/auth/data/datasources/veiculo_datasource.dart';
 import 'package:portaria_flutter/shared/auth/presentation/controllers/veiculo_controller.dart';
 import 'package:portaria_flutter/shared/auth/presentation/theme/app_colors.dart';
-import 'package:portaria_flutter/shared/auth/presentation/widgets/dialog_cadastro_veiculo.dart';
-import 'package:portaria_flutter/shared/auth/presentation/widgets/dialog_editar_veiculo.dart';
+import 'package:portaria_flutter/shared/auth/presentation/widgets/veiculo/dialog_cadastro_veiculo.dart';
+import 'package:portaria_flutter/shared/auth/presentation/widgets/veiculo/dialog_editar_veiculo.dart';
 
 class VeiculoPage extends StatefulWidget {
   const VeiculoPage({super.key});

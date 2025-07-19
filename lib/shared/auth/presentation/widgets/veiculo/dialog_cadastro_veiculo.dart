@@ -28,20 +28,23 @@ class _DialogCadastroVeiculoState extends State<DialogCadastroVeiculo> {
     final novoVeiculo = VeiculoModel(
       placa: _placaController.text.trim().toUpperCase(),
       modelo: _modeloController.text.trim(),
-      status: 'NO_PATIO',  
+      status: 'NO_PATIO',
     );
 
     try {
       await widget.datasource.criarVeiculo(novoVeiculo);
       // ignore: use_build_context_synchronously
-      Navigator.pop(context, true); 
+      Navigator.pop(context, true);
     } catch (e) {
       setState(() => isLoading = false);
       // ignore: use_build_context_synchronously
       dev.log("erro: $e");
       // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Erro ao salvar veículo: $e')),
+        SnackBar(
+          content: Text('Erro ao salvar veículo: $e'),
+          backgroundColor: Colors.red,
+        ),
       );
     }
   }

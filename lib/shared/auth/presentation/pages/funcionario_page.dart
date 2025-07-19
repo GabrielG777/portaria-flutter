@@ -4,8 +4,8 @@ import 'package:portaria_flutter/shared/auth/data/datasources/funcionario_dataso
 import 'package:portaria_flutter/shared/auth/data/models/funcionario_model.dart';
 import 'package:portaria_flutter/shared/auth/presentation/theme/app_colors.dart';
 import 'package:portaria_flutter/shared/auth/data/datasources/impl/funcionario_datasource_impl.dart';
-import 'package:portaria_flutter/shared/auth/presentation/widgets/dialog_cadastro_funcionario.dart';
-import 'package:portaria_flutter/shared/auth/presentation/widgets/dialog_editar_funcionario.dart';
+import 'package:portaria_flutter/shared/auth/presentation/widgets/funcionario/dialog_cadastro_funcionario.dart';
+import 'package:portaria_flutter/shared/auth/presentation/widgets/funcionario/dialog_editar_funcionario.dart';
 // import 'dart:developer' as dev;
 
 class FuncionarioPage extends StatefulWidget {
@@ -106,12 +106,14 @@ class _FuncionarioPageState extends State<FuncionarioPage> {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(
                                     content: Text(
-                                        'Funcionário excluído com sucesso')),
+                                        'Funcionário excluído com sucesso'),
+                                          backgroundColor: Colors.green,),
                               );
                             } catch (e) {
                               // ignore: use_build_context_synchronously
                               ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(content: Text('Erro ao excluir: $e')),
+                                SnackBar(content: Text('Erro ao excluir: $e'),
+                                          backgroundColor: Colors.red,),
                               );
                             }
                           }

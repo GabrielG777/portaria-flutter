@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';
+import 'package:portaria_flutter/core/ulr/ulr_config.dart';
 import 'package:portaria_flutter/shared/auth/data/models/funcionario_model.dart';
 import '../auth_datasource.dart';
 import 'dart:developer' as dev;
@@ -14,7 +15,7 @@ class AuthDatasourceImpl implements AuthDatasource {
       String nome, String cnh) async {
     try {
       final response = await dio.post(
-        'http://192.168.5.16:8080/auth/login',
+        '${UrlConfig.ipconfig}/auth/login',
         data: {
           'nome': nome,
           'cnh': cnh,

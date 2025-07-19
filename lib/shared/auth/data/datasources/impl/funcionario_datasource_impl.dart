@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:portaria_flutter/core/ulr/ulr_config.dart';
 import 'package:portaria_flutter/shared/auth/data/datasources/funcionario_datasource.dart';
 import 'package:portaria_flutter/shared/auth/data/models/funcionario_model.dart';
 import 'dart:developer' as dev;
@@ -11,7 +12,7 @@ class FuncionarioDatasourceImpl implements FuncionarioDatasource {
   @override
   Future<List<FuncionarioModel>> listarFuncionarios() async {
     final response =
-        await dio.get('http://192.168.5.16:8080/funcionarios/listar');
+        await dio.get('${UrlConfig.ipconfig}/funcionarios/listar');
 
     dev.log("response: ${response.statusCode}");
     dev.log("aquiiiiii");
@@ -31,7 +32,7 @@ class FuncionarioDatasourceImpl implements FuncionarioDatasource {
     dev.log("aquiiiiiiiiiii");
 
     final response = await dio.post(
-      'http://192.168.5.16:8080/funcionarios/criar',
+      '${UrlConfig.ipconfig}/funcionarios/criar',
       data: funcionario.toJsonPost(),
       options: Options(
         headers: {
@@ -51,7 +52,7 @@ class FuncionarioDatasourceImpl implements FuncionarioDatasource {
   @override
   Future<void> deletarFuncionario(int id) async {
     final response = await dio.delete(
-      'http://192.168.5.16:8080/funcionarios/deletar/$id',
+      '${UrlConfig.ipconfig}/funcionarios/deletar/$id',
     );
 
     if (response.statusCode != 200) {
@@ -62,7 +63,7 @@ class FuncionarioDatasourceImpl implements FuncionarioDatasource {
   @override
   Future<void> editarFuncionario(FuncionarioModel funcionario) async {
   final response = await dio.put(
-    'http://192.168.5.16:8080/funcionarios/atualizar/${funcionario.id}',
+    '${UrlConfig.ipconfig}/funcionarios/atualizar/${funcionario.id}',
     data: funcionario.toJson(),
   );
 

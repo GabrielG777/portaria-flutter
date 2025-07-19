@@ -89,7 +89,8 @@ class _DialogEditarVeiculoState extends State<DialogEditarVeiculo> {
               Navigator.pop(context, false);
               // ignore: use_build_context_synchronously
               ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text('Erro ao editar veículo: $e')),
+                SnackBar(content: Text('Erro ao editar veículo: $e'),
+                                          backgroundColor: Colors.red,),
               );
             }
           },

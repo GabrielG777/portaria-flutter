@@ -5,7 +5,7 @@ class VeiculoController extends ChangeNotifier {
   List<VeiculoModel> _todosVeiculos = [];
   List<VeiculoModel> veiculosFiltrados = [];
 
-  String statusFiltro = 'TODOS'; // 'TODOS', 'NO_PATIO', 'EM_VIAGEM'
+  String statusFiltro = 'TODOS'; // 'NO_PATIO', 'EM_VIAGEM'
   String buscaPlaca = '';
 
   String formatarStatus(String status) {

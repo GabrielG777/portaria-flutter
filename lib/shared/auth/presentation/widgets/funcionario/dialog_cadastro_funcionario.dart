@@ -68,7 +68,8 @@ class DialogCadastroFuncionario extends StatelessWidget {
                 Navigator.pop(context, false);
 
                 ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text('Erro ao cadastrar: $e')),
+                  SnackBar(content: Text('Erro ao cadastrar: $e'),
+                                          backgroundColor: Colors.red,),
                 );
               }
             }

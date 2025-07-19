@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:portaria_flutter/core/ulr/ulr_config.dart';
 import 'package:portaria_flutter/shared/auth/data/datasources/veiculo_datasource.dart';
 import 'package:portaria_flutter/shared/auth/data/models/veiculo_model.dart';
 import 'dart:developer' as dev;
@@ -18,7 +19,7 @@ class VeiculoDatasourceImpl implements VeiculoDatasource {
 
     dev.log("json: $data");
     final response = await dio.post(
-      'http://192.168.5.16:8080/veiculos',
+      '${UrlConfig.ipconfig}/veiculos',
       data: data,
       options: Options(headers: {
         'Content-Type': 'application/json',
@@ -39,7 +40,7 @@ class VeiculoDatasourceImpl implements VeiculoDatasource {
   Future<void> deletarVeiculo(int id) async {
     try {
       final response = await dio.delete(
-        'http://192.168.5.16:8080/veiculos/deletar/$id',
+        '${UrlConfig.ipconfig}/veiculos/deletar/$id',
         options: Options(
           headers: {'Content-Type': 'application/json'},
         ),
@@ -59,7 +60,7 @@ class VeiculoDatasourceImpl implements VeiculoDatasource {
 
     dev.log("json: $jsonData");
     final response = await dio.put(
-      'http://192.168.5.16:8080/veiculos/atualizar/${veiculo.id}',
+      '${UrlConfig.ipconfig}/veiculos/atualizar/${veiculo.id}',
       data: jsonData,
       options: Options(
         headers: {
@@ -78,7 +79,7 @@ class VeiculoDatasourceImpl implements VeiculoDatasource {
   Future<void> editarVeiculoCustom(
       int id, Map<String, dynamic> dadosAtualizados) async {
     final response = await dio.put(
-      'http://192.168.5.16:8080/veiculos/atualizar/$id',
+      '${UrlConfig.ipconfig}/veiculos/atualizar/$id',
       data: dadosAtualizados,
       options: Options(
         headers: {
@@ -94,7 +95,7 @@ class VeiculoDatasourceImpl implements VeiculoDatasource {
 
   @override
   Future<List<VeiculoModel>> listarVeiculo() async {
-    final response = await dio.get('http://localhost:8080/veiculos');
+    final response = await dio.get('${UrlConfig.ipconfig}/veiculos');
 
     if (response.statusCode == 200) {
       final List data = response.data;
